@@ -16,3 +16,7 @@ $ npm install --location=global neovim
 
 - `init.vim` --> `~/.config/nvim/`
 - `coc-settings.json` --> `~/.config/nvim/`
+
+Once you have copied these files, you can start neovim so all the plugins defined in the vim config file are installed (init.vim)
+
+**IMPORTANT:** You might get multiple error when first running nvim. Usually at the second execution everything is installed correctly.
