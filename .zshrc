@@ -256,11 +256,6 @@ alias code='GTK_IM_MODULE="xim" code'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-# access to nodeenv
-export PATH="$PATH:/home/$USER/.local/bin"
-
-
 ## Fix issues with SSH in WSL every time a new terminal/session/panel is opened
 eval "$(ssh-agent -s)" > /dev/null 2>&1
 ssh-add ~/.ssh/me/me-gh > /dev/null 2>&1
@@ -271,6 +266,9 @@ ssh-add ~/.ssh/me/me-gh > /dev/null 2>&1
 
 # Solana CLI
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+
+# Nodeenv
+export PATH="$PATH:/home/$USER/.local/bin"
 
 # Nodenv
 export PATH="$HOME/.nodenv/bin:$PATH"
