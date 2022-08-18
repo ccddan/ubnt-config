@@ -272,6 +272,11 @@ ssh-add ~/.ssh/me/me-gh > /dev/null 2>&1
 # Solana CLI
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 
+# Nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
+source "$HOME/.nodenv/completions/nodenv.zsh"
+
 # NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

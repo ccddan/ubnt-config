@@ -4,6 +4,21 @@
 $ cp .zshrc ~/
 ```
 
+# Nodenv
+
+```bash
+$ curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-installer | bash
+$ mkdir -p "$(nodenv root)"/plugins
+$ # git clone https://github.com/nodenv/node-build.git "$(nodenv root)"/plugins/node-build # NOTE: manually install this plugin if it is not installed by default
+$ git clone https://github.com/nodenv/nodenv-update.git "$(nodenv root)"/plugins/nodenv-update
+$
+$ # Check nodenv installation/configuration status
+$ curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-doctor | bash
+$
+$ nodenv install 16.17.0
+$ nodenv global 16.17.0
+```
+
 # NeoVim
 
 ```bash
