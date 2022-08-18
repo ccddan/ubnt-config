@@ -328,9 +328,10 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+""" WSL Only """
 " clipboard with win32yank.exe
 " in ~/bin/win32yank.exe
-" https://github.com/equalsraf/win32yank/releases {{{
+" https://github.com/equalsraf/win32yank/releases
 let g:clipboard = {
   \   'name': 'win32yank-wsl',
   \   'copy': {
