@@ -283,7 +283,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # NVIM/FZF
 # Setting fd as the default source for fzf
-export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude ".git,node_modules,target,.env*,__py*,cdk.out,env,venv,*.egg-info,python"'
 
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
