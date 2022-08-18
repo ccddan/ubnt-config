@@ -29,3 +29,10 @@ $ chmod +x ~/apps/neovim/nvim7.appimage
 ```
 
 Once NeoVim is intalled, follow the configuration instructions at `nvim/README.md`.
+
+# Rust
+
+```bash
+$ # Install default configuration
+$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
