@@ -268,7 +268,7 @@ ssh-add ~/.ssh/me/me-gh > /dev/null 2>&1
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 
 # Nodeenv
-export PATH="$PATH:/home/$USER/.local/bin"
+export PATH="$USER/.local/bin:$PATH"
 
 # Nodenv
 export PATH="$HOME/.nodenv/bin:$PATH"
