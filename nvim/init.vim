@@ -38,11 +38,16 @@ Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> InitializeCoc()}}
 Plug 'dense-analysis/ale'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf.vim'
 " Requires:
 "   - sudo apt install fd-find
 "   - env vars: https://github.com/junegunn/fzf#respecting-gitignore
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
 
 " Rust extra tools
   Plug 'neovim/nvim-lspconfig'
@@ -76,7 +81,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 
 
 " Working with buffers
-"Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 
 "" Code Folding
@@ -179,7 +184,12 @@ endif
 "let g:UltiSnipsEditSplit="vertical"
 
 " fzf
-nnoremap <C-p> :Files<Cr>
+"nnoremap <C-p> :Files<Cr>
+" Mapping selecting mappings
+"nmap <leader><tab> <plug>(fzf-maps-n)
+"xmap <leader><tab> <plug>(fzf-maps-x)
+"omap <leader><tab> <plug>(fzf-maps-o)
+
 
 
 " Rust tools
@@ -223,6 +233,45 @@ lua << EOF
 require('pretty-fold').setup({})
 EOF
 
+
+" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  -- A list of parser names, or "all"
+  ensure_installed = { "rust", "typescript", "javascript", "python" },
+
+  -- Install parsers synchronously (only applied to `ensure_installed`)
+  sync_install = false,
+
+  -- Automatically install missing parsers when entering buffer
+  auto_install = true,
+
+  -- List of parsers to ignore installing (for "all")
+  ignore_install = { },
+
+  highlight = {
+    -- `false` will disable the whole extension
+    enable = true,
+
+    -- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
+    -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
+    -- the name of the parser)
+    -- list of language that will be disabled
+    disable = { },
+
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
 " Plugin frazrepo/vim-rainbow
 let g:rainbow_active = 1
 
@@ -234,16 +283,12 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-" fzf.vim mappings
+" coc.vim mappings
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
 
 " Automatically select first option in autocomplete popup
 " Map <tab> for trigger completion, completion confirm, snippet expand and jump
@@ -320,8 +365,7 @@ nnoremap <silent>    <A-c> <Cmd>BufferClose<CR>
 "                          :BufferCloseBuffersLeft
 "                          :BufferCloseBuffersRight
 " Magic buffer-picking mode
-"nnoremap <silent> <C-p>    <Cmd>BufferPick<CR> "" this keys combination
-"conflicts with FZF
+nnoremap <silent> <C-p>    <Cmd>BufferPick<CR>
 " Sort automatically by...
 nnoremap <silent> <Space>bb <Cmd>BufferOrderByBufferNumber<CR>
 nnoremap <silent> <Space>bd <Cmd>BufferOrderByDirectory<CR>
