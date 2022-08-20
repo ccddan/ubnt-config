@@ -58,7 +58,7 @@ Plug 'jose-elias-alvarez/typescript.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim/fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
