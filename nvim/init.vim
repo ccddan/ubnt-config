@@ -28,7 +28,6 @@ endfunction
 
 
 call plug#begin('~/.vim/plugged')
-Plug 'dracula/vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -38,11 +37,6 @@ Plug 'mhinz/vim-startify'
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> InitializeCoc()}}
 Plug 'dense-analysis/ale'
 
-"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-"Plug 'junegunn/fzf.vim'
-" Requires:
-"   - sudo apt install fd-find
-"   - env vars: https://github.com/junegunn/fzf#respecting-gitignore
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-lua/plenary.nvim'
@@ -64,6 +58,9 @@ Plug 'jose-elias-alvarez/typescript.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim/fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 
 " Colored brackets, parenthesis, etc
@@ -86,6 +83,11 @@ Plug 'romgrk/barbar.nvim'
 
 "" Code Folding
 Plug 'anuvyklack/pretty-fold.nvim'
+
+"" Themes
+Plug 'dracula/vim'
+Plug 'lucastrvsn/kikwis'
+Plug 'jnurmine/Zenburn'
 call plug#end()
 
 set nocompatible            " disable compatibility to old-time vi
@@ -124,10 +126,11 @@ if (has("termguicolors"))
   set termguicolors
   endif
   syntax enable
-" colorscheme evening
-colorscheme dracula
-" open new split panes to right and below
 
+"colorscheme evening
+colorscheme dracula
+"colorscheme kikwis
+"colorscheme zenburn
 
 
 " move line or visually selected block - alt+j/k
@@ -314,31 +317,11 @@ inoremap <silent><expr> <C-k>
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 inoremap <silent><expr> <cr> coc#pum#visible() && coc#pum#info()['index'] != -1 ? coc#pum#confirm() : "\<C-g>u\<CR>"
 
-"inoremap <silent><expr> <Cr>
-      "\ pumvisible() ? coc#pum#confirm() :
-      "\ CheckBackspace() ? "\<CR>" :
-      "\ coc#refresh()
 
-"inoremap <silent><expr> <Tab>
-      "\ pumvisible() ? coc#_select_confirm() :
-      "\ coc#expandableOrJumpable() ?
-      "\ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      "\ <SID>check_back_space() ? "\<Tab>" :
-      "\ coc#refresh()
-
-"function! s:check_back_space() abort
-  "let col = col('.') - 1
-  "return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
-"let g:coc_snippet_next = '<tab>'
-
-
-" Barbar: 'jiangmiao/auto-pairs'
-
-" Move to previous/next
+" Move to previous/next buffer
 nnoremap <silent>    <A-,> <Cmd>BufferPrevious<CR>
 nnoremap <silent>    <A-.> <Cmd>BufferNext<CR>
-" Re-order to previous/next
+" Re-order to previous/next buffer
 nnoremap <silent>    <A-<> <Cmd>BufferMovePrevious<CR>
 nnoremap <silent>    <A->> <Cmd>BufferMoveNext<CR>
 " Goto buffer in position...
@@ -353,7 +336,7 @@ nnoremap <silent>    <A-8> <Cmd>BufferGoto 8<CR>
 nnoremap <silent>    <A-9> <Cmd>BufferGoto 9<CR>
 nnoremap <silent>    <A-0> <Cmd>BufferLast<CR>
 " Pin/unpin buffer
-"nnoremap <silent>    <A-p> <Cmd>BufferPin<CR> "" conflicst with autopairs
+"nnoremap <silent>    <A-p> <Cmd>BufferPin<CR> "" conflicts with autopairs
 " Close buffer
 nnoremap <silent>    <A-c> <Cmd>BufferClose<CR>
 " Wipeout buffer
@@ -365,7 +348,7 @@ nnoremap <silent>    <A-c> <Cmd>BufferClose<CR>
 "                          :BufferCloseBuffersLeft
 "                          :BufferCloseBuffersRight
 " Magic buffer-picking mode
-nnoremap <silent> <C-p>    <Cmd>BufferPick<CR>
+"nnoremap <silent> <C-p>    <Cmd>BufferPick<CR>
 " Sort automatically by...
 nnoremap <silent> <Space>bb <Cmd>BufferOrderByBufferNumber<CR>
 nnoremap <silent> <Space>bd <Cmd>BufferOrderByDirectory<CR>
@@ -402,4 +385,26 @@ let g:clipboard = {
   \   'cache_enabled': 0,
   \ }
 
+
+"" vim-airline
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+let g:airline_theme='automatic'
+" Note: You must define the dictionary first before setting values.
+" Also, it's a good idea to check whether it exists as to avoid 
+" accidentally overwriting its contents.
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty='⚡'
 
