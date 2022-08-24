@@ -40,7 +40,6 @@ $ sudo apt-get install -y \
     libjansson-dev \
     libyaml-dev \
     libxml2-dev
-$ sudo apt-get install -y libjansson-dev
 $ git clone https://github.com/universal-ctags/ctags.git --depth=1
 $ cd ctags
 $ ./autogen.sh
