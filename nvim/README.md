@@ -28,6 +28,27 @@ $ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgre
 $ sudo dpkg -i ripgrep_13.0.0_amd64.deb && rm ripgrep_13.0.0_amd64.deb
 ```
 
+## CTags
+
+```bash
+$ sudo apt-get update -y
+$ sudo apt-get install -y \
+    gcc make \
+    pkg-config autoconf automake \
+    python3-docutils \
+    libseccomp-dev \
+    libjansson-dev \
+    libyaml-dev \
+    libxml2-dev
+$ sudo apt-get install -y libjansson-dev
+$ git clone https://github.com/universal-ctags/ctags.git --depth=1
+$ cd ctags
+$ ./autogen.sh
+$ ./configure
+$ make
+$ sudo make install
+```
+
 # Files
 
 - `init.vim` --> `~/.config/nvim/`
