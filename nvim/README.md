@@ -8,7 +8,7 @@
 ## COC Plugins Manager
 
 ```bash
-$ pip install neovim
+$ pip install neovim jedi
 $ npm install --location=global neovim
 ```
 

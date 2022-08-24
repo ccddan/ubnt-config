@@ -22,7 +22,10 @@ function! InitializeCoc()
   \ 'coc-yaml',
   \ 'coc-highlight',
   \ 'coc-rust-analyzer',
-  \ 'coc-snippets'
+  \ 'coc-snippets',
+  \ 'coc-jedi',
+  \ 'coc-pyright',
+  \ 'jedi-language-server',
   \ ])
 endfunction
 
