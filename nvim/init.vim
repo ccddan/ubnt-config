@@ -399,7 +399,7 @@ let g:clipboard = {
 
 "" vim-airline
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:airline_theme='automatic'
+let g:airline_theme='wombat'
 " Note: You must define the dictionary first before setting values.
 " Also, it's a good idea to check whether it exists as to avoid
 " accidentally overwriting its contents.
