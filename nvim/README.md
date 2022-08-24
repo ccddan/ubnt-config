@@ -49,6 +49,23 @@ $ make
 $ sudo make install
 ```
 
+# Clipboard Support
+
+**Ubuntu**: `sudo apt-get install -y xclip` (Disable win32yank clipboard support in init.vim file)
+
+**WSL**:
+
+```bash
+$ mkdir ~/bin/
+$ curl -LO https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+$ unzip win32yank-x64.zip
+$ chmod +x win32yank.exe
+$ mv win32yank.exe ~/bin/
+$ rm README.md LICENSE win32yank-x64.zip
+```
+
+NOTE: Clipboard support using win32yank.exe is enabled by default in init.vim file.
+
 # Files
 
 - `init.vim` --> `~/.config/nvim/`
