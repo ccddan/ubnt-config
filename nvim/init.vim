@@ -25,7 +25,6 @@ function! InitializeCoc()
   \ 'coc-snippets',
   \ 'coc-jedi',
   \ 'coc-pyright',
-  \ 'jedi-language-server',
   \ ])
 endfunction
 
