@@ -192,6 +192,10 @@ alias awskctl="$HOME/apps/aws-kubectl/kubectl"
 # Kubectl
 alias kctl="$HOME/apps/kubectl/kubectl"
 alias kubectl="kctl"
+alias k="kctl"
+
+alias kc='kctl create'
+
 alias kg='kctl get'
 alias kgp='kctl get pods'
 alias kgs='kctl get services'
@@ -201,7 +205,7 @@ alias kgsts='kctl get sts'
 alias kgn='kctl get nodes'
 alias kgns='kctl get namespaces'
 
-alias klog='kctl logs'
+alias klg='kctl logs'
 
 alias kd='kctl describe'
 alias kdp='kctl describe pod'
