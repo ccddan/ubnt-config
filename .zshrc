@@ -33,12 +33,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# zstyle ":omz:update" mode disabled  # disable automatic updates
+# zstyle ":omz:update" mode auto      # update automatically without asking
+zstyle ":omz:update" mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-zstyle ':omz:update' frequency 15
+zstyle ":omz:update" frequency 15
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -80,27 +80,27 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	colored-man-pages
-	command-not-found
-	zsh-autosuggestions
-	history
-	dirhistory
-	web-search
-	zsh-syntax-highlighting
-	zsh-interactive-cd
-	docker
-	docker-compose
-	kubectl
-	minikube
-	terraform
-	ansible
-	helm
-	vagrant
-	vault
-	nomad
-	aws
-	rust
+  git
+  colored-man-pages
+  command-not-found
+  zsh-autosuggestions
+  history
+  dirhistory
+  web-search
+  zsh-syntax-highlighting
+  zsh-interactive-cd
+  docker
+  docker-compose
+  kubectl
+  minikube
+  terraform
+  ansible
+  helm
+  vagrant
+  vault
+  nomad
+  aws
+  rust
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -140,37 +140,37 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias brightness='xrandr --output $(xrandr | grep " connected" | cut -f1 -d " ") --brightness'
 
 # Git
-alias gdf='git diff'
-alias gad='git add'
-alias gco='git checkout'
-alias gre='git reset'
-alias gcom='git commit'
-alias gtg='git tag'
-alias gst='git status'
-alias gbr='git branch'
-alias glsf='git ls-files -s'
+alias gdf="git diff"
+alias gad="git add"
+alias gco="git checkout"
+alias gre="git reset"
+alias gcom="git commit"
+alias gtg="git tag"
+alias gst="git status"
+alias gbr="git branch"
+alias glsf="git ls-files -s"
 alias glg='git log --all --pretty=format:"%h %cd %s (%an)" --since="15 days ago"'
 alias ghist='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
-alias gtype='git cat-file -t'
-alias gdump='git cat-file -p'
-alias gsh='git push'
-alias gpl='git pull'
-alias gint='git init'
-alias gcnf='git config'
-alias gfl='git flow' # requires git flow plugin installation
-alias gff='git flow feature'
-alias gffs='git flow feature start'
-alias gfff='git flow feature finish'
-alias gfr='git flow release'
-alias gfrs='git flow release start'
-alias gfrf='git flow release finish'
-alias gfh='git flow hotfix'
-alias gfhs='git flow hotfix start'
-alias gfhf='git flow hotfix finish'
+alias gtype="git cat-file -t"
+alias gdump="git cat-file -p"
+alias gsh="git push"
+alias gpl="git pull"
+alias gint="git init"
+alias gcnf="git config"
+alias gfl="git flow" # requires git flow plugin installation
+alias gff="git flow feature"
+alias gffs="git flow feature start"
+alias gfff="git flow feature finish"
+alias gfr="git flow release"
+alias gfrs="git flow release start"
+alias gfrf="git flow release finish"
+alias gfh="git flow hotfix"
+alias gfhs="git flow hotfix start"
+alias gfhf="git flow hotfix finish"
 
 # Docker
-alias dkr='docker'
-alias dkrc='docker-compose'
+alias dkr="docker"
+alias dkrc="docker-compose"
 
 # Kernel Update Utility
 # INSTRUCTIONS:
@@ -178,27 +178,27 @@ alias dkrc='docker-compose'
 # 2. sudo install ubuntu-mainline-kernel.sh /usr/local/bin/
 #
 # Usage: $ sudo update-kernel
-alias update-kernel='ubuntu-mainline-kernel.sh -i'
+alias update-kernel="ubuntu-mainline-kernel.sh -i"
 
 # Terraform
 alias tf11="$HOME/apps/terraform/0.11.14/terraform"
 alias tf12="$HOME/apps/terraform/0.12.31/terraform"
 alias tf13="$HOME/apps/terraform/0.13.3/terraform"
 alias tf1="$HOME/apps/terraform/1.0.5/terraform"
-alias tf='tf1'
+alias tf="tf1"
 
-alias tfi='tf init'
-alias tfmt='tf fmt'
-alias tfap='tf apply'
-alias tfapy='tf apply -auto-approve'
-alias tfd='tf destroy'
-alias tfdy='tf destroy -auto-approve'
-alias tfp='tf plan'
-alias tfv='tf validate'
+alias tfi="tf init"
+alias tfmt="tf fmt"
+alias tfap="tf apply"
+alias tfapy="tf apply -auto-approve"
+alias tfd="tf destroy"
+alias tfdy="tf destroy -auto-approve"
+alias tfp="tf plan"
+alias tfv="tf validate"
 
 # Packer
 alias packer="$HOME/apps/packer/packer"
-alias pkr='packer'
+alias pkr="packer"
 
 # AWS Kubectl
 alias awskctl="$HOME/apps/aws-kubectl/kubectl"
@@ -208,39 +208,39 @@ alias kctl="$HOME/apps/kubectl/kubectl"
 alias kubectl="kctl"
 alias k="kctl"
 
-alias kc='kctl create'
+alias kc="kctl create"
 
-alias kg='kctl get'
-alias kgp='kctl get pods'
-alias kgs='kctl get services'
-alias kgd='kctl get deployments'
-alias kgrs='kctl get rs'
-alias kgsts='kctl get sts'
-alias kgn='kctl get nodes'
-alias kgns='kctl get namespaces'
+alias kg="kctl get"
+alias kgp="kctl get pods"
+alias kgs="kctl get services"
+alias kgd="kctl get deployments"
+alias kgrs="kctl get rs"
+alias kgsts="kctl get sts"
+alias kgn="kctl get nodes"
+alias kgns="kctl get namespaces"
 
-alias klg='kctl logs'
+alias klg="kctl logs"
 
-alias kd='kctl describe'
-alias kdp='kctl describe pod'
-alias kds='kctl describe service'
-alias kdd='kctl describe deployment'
-alias kdrs='kctl describe rs'
-alias kdsts='kctl describe sts'
-alias kdn='kctl describe node'
-alias kdns='kctl describe namespace'
+alias kd="kctl describe"
+alias kdp="kctl describe pod"
+alias kds="kctl describe service"
+alias kdd="kctl describe deployment"
+alias kdrs="kctl describe rs"
+alias kdsts="kctl describe sts"
+alias kdn="kctl describe node"
+alias kdns="kctl describe namespace"
 
-alias kap='kctl apply'
-alias kdes='kctl destroy'
+alias kap="kctl apply"
+alias kdes="kctl destroy"
 
-alias kdel='kctl delete'
-alias kdelp='kctl delete pod'
-alias kdeld='kctl delete deployment'
-alias kdels='kctl delete service'
-alias kdelrs='kctl delete rs'
-alias kdelsts='kctl delete sts'
-alias kdeln='kctl delete node'
-alias kdelns='kctl delete ns'
+alias kdel="kctl delete"
+alias kdelp="kctl delete pod"
+alias kdeld="kctl delete deployment"
+alias kdels="kctl delete service"
+alias kdelrs="kctl delete rs"
+alias kdelsts="kctl delete sts"
+alias kdeln="kctl delete node"
+alias kdelns="kctl delete ns"
 
 # Minikube
 export PATH="$HOME/apps/minikube/:$PATH"
@@ -258,11 +258,11 @@ alias ganache="$HOME/apps/ganache/ganache.appimage"
 # Neo Vim
 alias nvim5="$HOME/apps/neovim/nvim5.appimage"
 alias nvim="$HOME/apps/neovim/nvim7.appimage"
-alias vim='nvim -N'
+alias vim="nvim -N"
 export MYVIMRC="~/.config/nvim/init.vim"
 
 # Nano
-alias nano='nano -milwgMEL'
+alias nano="nano -milwgMEL"
 
 # VS Code
 alias code='GTK_IM_MODULE="xim" code'
