@@ -15,6 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -81,11 +83,23 @@ plugins=(
 	git
 	colored-man-pages
 	command-not-found
-	kubectl
-	minikube
 	zsh-autosuggestions
 	history
 	dirhistory
+	web-search
+	zsh-syntax-highlighting
+	zsh-interactive-cd
+	docker
+	docker-compose
+	kubectl
+	minikube
+	terraform
+	ansible
+	helm
+	vagrant
+	vault
+	nomad
+	aws
 	rust
 )
 
