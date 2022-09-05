@@ -287,6 +287,11 @@ export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 # Anchor
 export PATH="$HOME/.avm/bin:$PATH"
 
+# Pyenv Configuration
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # Nodeenv
 export PATH="$USER/.local/bin:$PATH"
 
@@ -307,3 +312,8 @@ export FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude ".git,no
 
 # To apply the command to CTRL-T as well
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+
+#######################################################################
+####                    CUSTOM LOCAL CONFIG                        ####
+#######################################################################
