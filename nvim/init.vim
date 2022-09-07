@@ -117,6 +117,7 @@ filetype plugin on
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 set spell                 " enable spell check (may need to download language package)
+set spelllang=en,cjk      " spell languages
 set noswapfile            " disable creating swap file
 set scrolloff=5           " keep at least five lines next/above cursor
 set splitright
@@ -417,3 +418,13 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
+
+""" Spell Checking
+"Insert mode: <C-x> s "" A completion menu will show a list of suggestions.
+"Normal mode:
+
+  "[s  "" go to previous spell error
+  "]s  "" go to next spell error
+  "zg  "" add to your spell file
+  "z=  "" correct error
+  "1z= "" choose the first candidate directly
