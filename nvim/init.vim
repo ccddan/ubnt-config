@@ -251,7 +251,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "rust", "typescript", "javascript", "python" },
+  ensure_installed = { "rust", "typescript", "javascript", "python", "go" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

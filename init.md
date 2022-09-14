@@ -26,6 +26,14 @@ $ # Install default configuration
 $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
+# Go
+
+```bash
+$ curl https://go.dev/dl/go1.19.1.linux-amd64.tar.gz -Lo go1.19.1.tar.gz
+$ rm -rf /usr/local/go
+$ tar -C /usr/local -xzf go1.19.1.tar.gz
+```
+
 # NeoVim
 
 ```bash
@@ -36,4 +44,3 @@ $ chmod +x ~/apps/neovim/nvim7.appimage
 ```
 
 Once NeoVim is intalled, follow the configuration instructions at `nvim/README.md`.
-

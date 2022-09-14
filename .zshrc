@@ -282,6 +282,9 @@ ssh-add ~/.ssh/me/me-gh > /dev/null 2>&1
 # Rust
 . "$HOME/.cargo/env"
 
+# Go
+export PATH=$PATH:/usr/local/go/bin
+
 # Solana CLI
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 # Anchor
