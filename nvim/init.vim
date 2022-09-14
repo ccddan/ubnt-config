@@ -65,6 +65,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'f-person/git-blame.nvim'
 
 
 " Colored brackets, parenthesis, etc
