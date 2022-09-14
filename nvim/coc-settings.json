@@ -1,6 +1,14 @@
 {
   "rust-analyzer.server.path": "rust-analyzer",
-  "coc.preferences.formatOnSaveFiletypes": [
-    "*"
-  ]
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod"],
+      "filetypes": ["go"]
+    }
+  },
+  "yaml.schemas": {
+    "kubernetes": "/*.yaml"
+  }
 }
